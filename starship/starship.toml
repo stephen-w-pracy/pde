@@ -1,0 +1,175 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](green)\
+$os\
+$hostname\
+[](fg:green bg:bright-green)\
+$directory\
+[](fg:bright-green bg:cyan)\
+$git_branch\
+$git_status\
+[](fg:cyan bg:bright-blue)\
+$c\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[](fg:bright-blue bg:blue)\
+$docker_context\
+$conda\
+[](fg:blue bg:bright-black)\
+$time\
+[ ](fg:bright-black)\
+$line_break$character"""
+
+palette = 'gruvbox_dark'
+
+[palettes.gruvbox_dark]
+color_fg0 = '#fbf1c7'
+color_bg1 = '#3c3836'
+# color_bg3 = '#665c54'
+# color_blue = '#458588'
+color_aqua = '#689d6a'
+color_green = '#98971a'
+# color_orange = '#d65d0e'
+color_purple = '#b16286'
+color_red = '#cc241d'
+# color_yellow = '#d79921'
+
+[os]
+disabled = false
+style = "bg:green fg:black"
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+EndeavourOS = ""
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+Pop = ""
+
+[username]
+show_always = true
+style_user = "bg:green fg:black"
+style_root = "bg:green fg:red"
+format = '[ $user ]($style)'
+
+[hostname]
+aliases = { "Stephen Calnan" = "kruk " }
+ssh_only = false
+style = "bg:green fg:black"
+format = '[ $hostname ]($style)'
+
+[directory]
+style = "fg:bright-black bg:bright-green"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Code" = "󰲋 "
+
+[git_branch]
+symbol = ""
+style = "bg:cyan"
+format = '[[ $symbol $branch ](fg:bright-white bg:cyan)]($style)'
+
+[git_status]
+style = "bg:cyan"
+format = '[[($all_status$ahead_behind )](fg:bright-white bg:cyan)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:bright-blue"
+format = '[[ $symbol( $version) ](fg:white bg:bright-blue)]($style)'
+
+[c]
+symbol = " "
+style = "bg:blue"
+format = '[[ $symbol( $version) ](fg:white bg:blue)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:blue"
+format = '[[ $symbol( $version) ](fg:white bg:blue)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:blue"
+format = '[[ $symbol( $version) ](fg:white bg:blue)]($style)'
+
+[php]
+symbol = ""
+style = "bg:blue"
+format = '[[ $symbol( $version) ](fg:white bg:blue)]($style)'
+
+[java]
+symbol = ""
+style = "bg:blue"
+format = '[[ $symbol( $version) ](fg:white bg:blue)]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:blue"
+format = '[[ $symbol( $version) ](fg:white bg:blue)]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:blue"
+format = '[[ $symbol( $version) ](fg:white bg:blue)]($style)'
+
+[python]
+symbol = ""
+style = "bg:bright-blue"
+format = '[[ $symbol( $version) ](fg:bright-white bg:bright-blue)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:color_bg3"
+format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
+
+[conda]
+style = "bg:color_bg3"
+format = '[[ $symbol( $environment) ](fg:#83a598 bg:color_bg3)]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:bright-black"
+format = '[[  $time ](fg:white bg:bright-black)]($style)'
+
+[line_break]
+disabled = false
+
+[character]
+disabled = false
+success_symbol = '[❯](bold fg:color_green)'
+error_symbol = '[❯](bold fg:color_red)'
+vimcmd_symbol = '[❮](bold fg:color_green)'
+vimcmd_replace_one_symbol = '[❮](bold fg:color_purple)'
+vimcmd_replace_symbol = '[❮](bold fg:color_purple)'
+vimcmd_visual_symbol = '[❮](bold fg:color_yellow)'
