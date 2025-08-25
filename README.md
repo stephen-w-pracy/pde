@@ -29,3 +29,6 @@ The apps I use are:
   - modtime - my own function(s) for printing the last modified time of a file
     in neovim
 - [homebrew](https://brew.sh/) (on Macs)
+  - [colima](https://github.com/abiosoft/colima)
+  - [buildx](https://github.com/docker/buildx)
+
